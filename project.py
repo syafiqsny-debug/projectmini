@@ -29,11 +29,8 @@ numeric_columns = DF.select_dtypes(include=['int64', 'float64']).columns.tolist(
 # 2. Use the filtered list and assign a unique key string
 column = st.selectbox("Choose a numeric column for the histogram", numeric_columns, key="hist_column_select")
 
-# 3. Safe Matplotlib Histogram
-fig, ax = plt.subplots(figsize=(10, 6))
-DF[column].plot(kind='hist', ax=ax, edgecolor='black', color='purple')
-ax.set_title(f"Distribution of {column}")
-st.pyplot(fig)
+
+
 
 # 4. Safe Plotly Histogram
 fig_plotly = px.histogram(DF, x=column, title=f"Plotly Distribution of {column}")
