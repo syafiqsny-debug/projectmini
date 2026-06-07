@@ -21,11 +21,11 @@ DF = DF[DF['fuelType']== 'Petrol']
 
 
 st.subheader("Histogram")
-column = st.selectbox("Choose a column",df.columns)
+column = st.selectbox("Choose a column",DF.columns)
 fig, ax = plt.subplots(figsize = (10,6))
-df[column].plot(kind = 'hist', ax =ax)
+DF[column].plot(kind = 'hist', ax =ax)
 st.pyplot(fig)
-fig = px.histogram(df, x=column)
+fig = px.histogram(DF, x=column)
 fig.update_traces( marker = {"color":"purple", "line":{"color":"black","width":2}})
 st.plotly_chart(fig)
 
