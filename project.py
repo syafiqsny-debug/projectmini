@@ -19,17 +19,15 @@ DF = DF.rename(columns={'model': 'Model','year' : 'Year', 'price':'Price', 'tran
 DF = DF[DF['fuelType']== 'Petrol']
 
 
+
 st.subheader("Histogram")
-fig, ax = plt.subplots(figsize=(10, 6))
-
-DF['engineSize'].plot(kind='hist', 
-                    ax=ax)
-
-plt.title('Histogram Plot')
-
-plt.xlabel('engineSize')
-plt.ylabel('Frequency')
-plt.show()
+column = st.selectbox("Choose a column",df.columns)
+fig, ax = plt.subplots(figsize = (10,6))
+df[column].plot(kind = 'hist', ax =ax)
+st.pyplot(fig)
+fig = px.histogram(df, x=column)
+fig.update_traces( marker = {"color":"purple", "line":{"color":"black","width":2}})
+st.plotly_chart(fig)
 
 
 st.subheader("Scatter Chart")
