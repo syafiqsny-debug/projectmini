@@ -36,9 +36,19 @@ st.pyplot(fig)
 
 
 st.subheader("Scatter Chart")
-x_column = st.selectbox("Choose x-axis column",DF.columns)
-y_column = st.selectbox("Choose y-axis column",DF.columns)
-fig, ax = plt.subplots(figsize = (10,6))
-DF.plot(kind = 'scatter', x=x_column, y=y_column, ax =ax)
-ax.tick_params(axis='x', labelrotation=45)
+fig, ax = plt.subplots(figsize = (8, 6))
+
+# scatter plot
+DF.plot(kind='scatter',
+        x='Model',
+        y='Price',
+        color = 'red',
+        ax=ax)
+ 
+# set the title
+plt.title('ScatterPlot')
+
+ax.set_xticks(range(len(DF['Model'])))
+ax.set_xticklabels(DF['Model'], rotation=45) 
+
 st.pyplot(fig)
