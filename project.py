@@ -42,7 +42,7 @@ fig, ax = plt.subplots(figsize = (8, 6))
 DF.plot(kind='scatter',
         x='Model',
         y='Price',
-        color = 'red',
+        color = 'blue',
         ax=ax)
  
 # set the title
