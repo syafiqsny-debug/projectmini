@@ -23,7 +23,7 @@ DF = DF[DF['fuelType']== 'Petrol']
 
 st.subheader("Histogram")
 
-fig, ax = plt.subplots(figsize=(10, 10))
+fig, ax = plt.subplots(figsize=(10, 6))
 
 DF['MilesperGallon'].plot(kind='hist', 
                            edgecolor = 'black',
