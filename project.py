@@ -48,7 +48,6 @@ DF.plot(kind='scatter',
 # set the title
 plt.title('ScatterPlot')
 
-ax.set_xticks(range(len(DF['Model'])))
 ax.set_xticklabels(DF['Model'], rotation=45) 
 
 st.pyplot(fig)
