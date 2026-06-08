@@ -23,18 +23,17 @@ DF = DF[DF['fuelType']== 'Petrol']
 
 st.subheader("Histogram")
 
-# 1. Get ONLY numeric columns to prevent plotting errors
 numeric_columns = DF.select_dtypes(include=['int64', 'float64']).columns.tolist()
-
-# 2. Use the filtered list and assign a unique key string
 column = st.selectbox("Choose a numeric column for the histogram", numeric_columns, key="hist_column_select")
 
-
-
-
-# 4. Safe Plotly Histogram
 fig_plotly = px.histogram(DF, x=column, title=f"Plotly Distribution of {column}")
 fig_plotly.update_traces(marker={"color": "purple", "line": {"color": "black", "width": 2}})
+
+# Fix the x-axis range based on the minimum and maximum values of the selected column
+fig_plotly.update_layout(
+    xaxis_range=[DF[column].min(), DF[column].max()]
+)
+
 st.plotly_chart(fig_plotly)
 
 st.subheader("Scatter Chart")
