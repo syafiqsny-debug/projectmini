@@ -35,6 +35,11 @@ plt.xlabel('MilesperGallon')
 plt.ylabel('Frequency')
 st.pyplot(fig)
 
+st.write("""This histogram displays a bimodal, left-skewed distribution for the MilesperGallon variable across a range of approximately 23 to 58 MPG.
+The data is characterized by two distinct frequency peaks—a minor peak around 41–43 MPG and a primary, tallest peak around 48–50 MPG—separated by a noticeable drop in frequency near 45 MPG.
+This bimodal behavior strongly suggests the dataset contains two distinct subgroups of vehicles, such as standard internal combustion engines versus highly efficient hybrids,
+while the elongated tail to the left indicates a smaller group of lower-efficiency vehicles extending down toward 23 MPG.""")
+
 
 st.subheader("Scatter Chart")
 fig, ax = plt.subplots(figsize = (8, 6))
