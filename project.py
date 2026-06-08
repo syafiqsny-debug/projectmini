@@ -32,7 +32,7 @@ plt.title('Histogram Plot')
 
 plt.xlabel('MilesperGallon')
 plt.ylabel('Frequency')
-plt.show()
+st.pyplot(fig)
 
 
 st.subheader("Scatter Chart")
